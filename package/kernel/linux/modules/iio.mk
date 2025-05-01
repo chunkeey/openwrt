@@ -7,6 +7,7 @@ IIO_MENU:=Industrial I/O Modules
 
 
 define KernelPackage/iio-core
+  DEPENDS:=+!LINUX_6_6:kmod-dma-buf
   SUBMENU:=$(IIO_MENU)
   TITLE:=Industrial IO core
   DEPENDS:=+!LINUX_6_6:kmod-dma-buf
