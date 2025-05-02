@@ -25,7 +25,7 @@ $(eval $(call KernelPackage,aoe))
 define KernelPackage/ata-core
   SUBMENU:=$(BLOCK_MENU)
   TITLE:=Serial and Parallel ATA support
-  DEPENDS:=@PCI_SUPPORT||TARGET_sunxi +kmod-scsi-core
+  DEPENDS:=@PCI_SUPPORT||TARGET_apm821xx||TARGET_sunxi +kmod-scsi-core
   KCONFIG:=CONFIG_ATA
   FILES:=$(LINUX_DIR)/drivers/ata/libata.ko
 ifneq ($(wildcard $(LINUX_DIR)/drivers/ata/libahci.ko),)
