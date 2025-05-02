@@ -65,10 +65,6 @@
 				label = "u-boot-env";
 				reg = <0x00100000 0x00100000>;
 				read-only;
-
-				nvmem-layout {
-					compatible = "u-boot,env";
-				};
 			};
 
 			partition@200000 {
