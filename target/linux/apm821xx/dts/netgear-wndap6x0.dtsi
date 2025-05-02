@@ -50,25 +50,6 @@
 				label = "u-boot-env";
 				reg = <0x00100000 0x0004000>;
 				read-only;
-
-				nvmem-layout {
-					compatible = "u-boot,env";
-
-					ethaddr {
-					};
-
-					bootcmd {
-					};
-
-					serno {
-					};
-
-					ProductID {
-					};
-
-					HardwareVer {
-					};
-				};
 			};
 
 			/* 0x104000 - 0x10ffff free */
