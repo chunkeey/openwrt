@@ -1808,7 +1808,6 @@ define KernelPackage/usb3
 	+TARGET_bcm53xx:kmod-phy-bcm-ns-usb3 \
 	+TARGET_ramips_mt7621:kmod-usb-xhci-mtk \
 	+TARGET_mediatek:kmod-usb-xhci-mtk \
-	+TARGET_apm821xx_nand:kmod-usb-xhci-pci-renesas \
 	+TARGET_lantiq_xrx200:kmod-usb-xhci-pci-renesas \
 	+TARGET_mvebu_cortexa9:kmod-usb-xhci-pci-renesas
   KCONFIG:= \
@@ -1898,6 +1897,7 @@ $(eval $(call KernelPackage,usb-xhci-mtk))
 define KernelPackage/usb-xhci-pci-renesas
   TITLE:=Support for additional Renesas xHCI controller with firmware
   KCONFIG:=CONFIG_USB_XHCI_PCI_RENESAS
+  DEPENDS:=+kmod-usb-xhci-hcd
   HIDDEN:=1
   FILES:=$(LINUX_DIR)/drivers/usb/host/xhci-pci-renesas.ko
   AUTOLOAD:=$(call AutoLoad,54,xhci-pci-renesas,1)
